@@ -17,7 +17,7 @@ jobs:
         curl -O "https://download.ztedevices.com/device/global/support/opensource/2/20210602_01/ZTE_A2022PG_R(11)_Kernel(5.4.61).tar.gz"
         mkdir -p zte_kernel
         tar -xzvf *.tar.gz -C zte_kernel
-        mv zte_kernel/kernel/msm-5.4/* .
+        rsync -a zte_kernel/kernel/msm-5.4/ .
         rm -rf zte_kernel *.tar.gz
 
     - name: Commit
